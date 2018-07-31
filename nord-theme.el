@@ -40,7 +40,7 @@
 (unless (>= emacs-major-version 24)
   (error "Nord theme requires Emacs 24 or later!"))
 
-(deftheme nord "An arctic, north-bluish clean and elegant theme")
+(deftheme graphite "An arctic, north-bluish clean and elegant theme")
 
 (defgroup nord nil
   "Nord theme customizations.
@@ -79,10 +79,10 @@
 
 ;;;; Color Constants
 (let ((class '((class color) (min-colors 89)))
-  (nord0 (if (display-graphic-p) "#2E3440" nil))
-  (nord1 (if (display-graphic-p) "#3B4252" "black"))
-  (nord2 (if (display-graphic-p) "#434C5E" "#434C5E"))
-  (nord3 (if (display-graphic-p) "#4C566A" "brightblack"))
+  (nord0 (if (display-graphic-p) "#020202" nil))
+  (nord1 (if (display-graphic-p) "#111111" "black"))
+  (nord2 (if (display-graphic-p) "#1a1a1a" "#1a1a1a"))
+  (nord3 (if (display-graphic-p) "#2a2a2a" "brightblack"))
   (nord4 (if (display-graphic-p) "#D8DEE9" "#D8DEE9"))
   (nord5 (if (display-graphic-p) "#E5E9F0" "white"))
   (nord6 (if (display-graphic-p) "#ECEFF4" "brightwhite"))
@@ -116,7 +116,7 @@
   (nord-region-highlight-background (if
     (string= nord-region-highlight "frost") "#88C0D0"
       (if (string= nord-region-highlight "snowstorm") "#D8DEE9" "#434C5E")))
-  (nord-uniform-mode-lines-background (if nord-uniform-mode-lines "#4C566A" "#3B4252")))
+  (nord-uniform-mode-lines-background (if nord-uniform-mode-lines "#4C566A" "#020202")))
 
 ;;;; +------------+
 ;;;; + Core Faces +
@@ -223,7 +223,7 @@
     `(message-separator ((,class (:inherit shadow))))
     `(minibuffer-prompt ((,class (:foreground ,nord8 :weight bold))))
     `(mm-command-output ((,class (:foreground ,nord8))))
-    `(mode-line ((,class (:foreground ,nord8 :background ,nord3))))
+    `(mode-line ((,class (:foreground ,nord8 :background ,nord1))))
     `(mode-line-buffer-id ((,class (:weight bold))))
     `(mode-line-highlight ((,class (:inherit highlight))))
     `(mode-line-inactive ((,class (:foreground ,nord4 :background ,nord-uniform-mode-lines-background))))
@@ -581,9 +581,9 @@
 
     ;; > Powerline
     `(powerline-active1 ((,class (:foreground ,nord4 :background ,nord1))))
-    `(powerline-active2 ((,class (:foreground ,nord4 :background ,nord3))))
-    `(powerline-inactive1 ((,class (:background ,nord2))))
-    `(powerline-inactive2 ((,class (:background ,nord2))))
+    `(powerline-active2 ((,class (:foreground ,nord4 :background ,nord1))))
+    `(powerline-inactive1 ((,class (:background ,nord0))))
+    `(powerline-inactive2 ((,class (:background ,nord0))))
 
     ;; > Powerline Evil
     `(powerline-evil-base-face ((,class (:foreground ,nord4))))
@@ -591,6 +591,17 @@
     `(powerline-evil-insert-face ((,class (:foreground ,nord0 :background ,nord4))))
     `(powerline-evil-visual-face ((,class (:foreground ,nord0 :background ,nord7))))
     `(powerline-evil-replace-face ((,class (:foreground ,nord0 :background ,nord9))))
+
+    `(spaceline-evil-normal    ((,class (:foreground ,nord0 :background ,nord8))))
+    `(spacemacs-replace-face   ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spaceline-evil-replace   ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spacemacs-insert-face    ((,class (:foreground ,nord0 :background ,nord4))))
+    `(spaceline-evil-insert    ((,class (:foreground ,nord0 :background ,nord4))))
+    `(spacemacs-motion-face    ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spaceline-evil-motion    ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spacemacs-visual-face    ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spaceline-evil-visual    ((,class (:foreground ,nord0 :background ,nord9))))
+    `(spaceline-highlight-face ((,class (:foreground ,nord0 :background ,nord8))))
 
     ;; > NeoTree
     `(neo-banner-face ((,class (:foreground ,nord10))))
