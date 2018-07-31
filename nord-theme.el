@@ -116,7 +116,7 @@
   (nord-region-highlight-background (if
     (string= nord-region-highlight "frost") "#88C0D0"
       (if (string= nord-region-highlight "snowstorm") "#D8DEE9" "#434C5E")))
-  (nord-uniform-mode-lines-background (if nord-uniform-mode-lines "#4C566A" "#020202")))
+  (nord-uniform-mode-lines-background (if nord-uniform-mode-lines "#4C566A" "#111111")))
 
 ;;;; +------------+
 ;;;; + Core Faces +
